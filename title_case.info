@@ -1,0 +1,7 @@
+name = Title Case Module
+description = Takes an input string and correct title casing
+package = Epicodus Test Examples
+core = 7.x
+dependencies = simpletest
+files[] = title_case.module
+files[] = title_case.test

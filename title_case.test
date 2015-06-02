@@ -1,0 +1,81 @@
+<?php
+    // require_once "src/TitleCaseGenerator.php";
+    class SimpletestUnitTestTitleCaseTestCase extends DrupalUnitTestCase {
+
+        public static function getInfo() {
+            return array(
+                'name' => 'Title Case Module',
+                'description' => 'Takes an input string and correct title casing',
+                'group' => 'Examples',
+            );
+        }
+
+        // Version 1
+        function testMakeTitleCaseOneWord_v1() {
+            $result = simpletest_makeTitleCase('beowulf');
+            $message = 'a lower case word should return with the first letter capitalized.';
+            $this->assertEqual($result, 'Beowulf');
+        }
+
+        // Version 2
+        function testMakeTitleCaseOneWord_v2() {
+            $case = simpletest_makeTitleCase('beowulf');
+            $result = ($case === 'Beowulf');
+            $message = 'A lower case word should return with the first letter capitalized.';
+            $this->assertTrue($result, $message);
+        }
+
+
+
+
+        // function test_makeTitleCase_multipleWords()
+        // {
+        //     //Arrange
+        //     $test_TitleCaseGenerator = new TitleCaseGenerator;
+        //     $input = "homer's odyssey";
+        //     //Act
+        //     $result = $test_TitleCaseGenerator->makeTitleCase($input);
+        //     //Assert
+        //     $this->assertEquals("Homer's Odyssey", $result);
+        // }
+        // function test_makeTitleCase_excludeSmallWords()
+        // {
+        //     //Arrange
+        //     $test_TitleCaseGenerator = new TitleCaseGenerator;
+        //     $input = "return of the king";
+        //     //Act
+        //     $result = $test_TitleCaseGenerator->makeTitleCase($input);
+        //     //Assert
+        //     $this->assertEquals("Return of the King", $result);
+        // }
+        // function test_makeTitleCase_firstWordAlways()
+        // {
+        //     //Arrange
+        //     $test_TitleCaseGenerator = new TitleCaseGenerator;
+        //     $input = "the fellowship of the ring";
+        //     //Act
+        //     $result = $test_TitleCaseGenerator->makeTitleCase($input);
+        //     //Assert
+        //     $this->assertEquals("The Fellowship of the Ring", $result);
+        // }
+        // function test_makeTitleCase_lastWordAlways()
+        // {
+        //     //Arrange
+        //     $test_TitleCaseGenerator = new TitleCaseGenerator;
+        //     $input = "killing in the name of";
+        //     //Act
+        //     $result = $test_TitleCaseGenerator->makeTitleCase($input);
+        //     //Assert
+        //     $this->assertEquals("Killing in the Name Of", $result);
+        // }
+        // function test_makeTitleCase_caseProof()
+        // {
+        //     //Arrange
+        //     $test_TitleCaseGenerator = new TitleCaseGenerator;
+        //     $input = "the KALevala";
+        //     //Act
+        //     $result = $test_TitleCaseGenerator->makeTitleCase($input);
+        //     //Assert
+        //     $this->assertEquals("The Kalevala", $result);
+        // }
+    }
